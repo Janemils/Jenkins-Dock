@@ -1,7 +1,8 @@
 FROM node:12-alpine
 RUN apk add --no-cache python2 g++ make
-WORKDIR /app
+WORKDIR /backend
+RUN dir -s  
 COPY . .
 RUN yarn install --production
-CMD ["node", "backend/src/index.js"]
+CMD ["node", "src/index.js"]
 EXPOSE 3000
